@@ -238,85 +238,71 @@ def normalize_model_entrypoint(code: str):
 
 
 def normalize_source_fixed_point(code: str, source: str):
-    """Fix only a *proven* PowerShell ToString('F<n>') formatting mistake.
+    """Normalize source-proven PowerShell F<n> fixed-point formatting.
 
-    Spark format_number inserts grouping separators. Source-backed replacement
-    uses printf-style format_string without grouping. The original expression,
-    output field, and number of decimals remain unchanged. Result is STILL
-    only a proposal and must pass static and runtime/parity checks.
+    Do not use Java printf %.nf on Spark Decimal (IllegalFormatConversionException),
+    nor Spark format_number alone (which inserts grouping separators).
+    A decimal cast keeps the numeric value and fixed scale without a floating
+    conversion. Any semantic difference must still pass independent parity.
     """
-    contracts={}
+    contracts = {}
     for line in source.splitlines():
-        match=re.search(r"""(?ix)^\s*([a-z_][a-z_0-9]*)\s*=.*?\.ToString\(\s*['"]F(\d{1,2})['"]""",line)
+        match = re.search(r"""(?ix)^\s*([a-z_][a-z_0-9]*)\s*=.*?\.ToString\(\s*['"]F(\d{1,2})['"]""", line)
         if match:
-            contracts[match.group(1).casefold()]=int(match.group(2))
+            contracts[match.group(1).casefold()] = int(match.group(2))
     if not contracts:
         return code, []
-    tree=ast.parse(code)
-    replacements=[]
-    used_direct={}
-    class Rewriter(ast.NodeTransformer):
-        def visit_Call(self,node):
-            self.generic_visit(node)
-            if not (isinstance(node.func,ast.Attribute) and node.func.attr=='withColumn'
-                    and len(node.args)>=2 and isinstance(node.args[0],ast.Constant)
-                    and isinstance(node.args[0].value,str)):
-                return node
-            field=node.args[0].value
-            precision=contracts.get(field.casefold())
-            if precision is None:
-                return node
-            expr=node.args[1]
-            if not (isinstance(expr,ast.Call) and len(expr.args)==2 and not expr.keywords
-                    and isinstance(expr.args[1],ast.Constant) and
-                    type(expr.args[1].value) is int and expr.args[1].value==precision):
-                return node
-            formatter=expr.func
-            if isinstance(formatter,ast.Attribute) and formatter.attr=='format_number':
-                # Accept only the well-known Spark functions namespace alias.
-                alias=formatter.value
-                if not (isinstance(alias,ast.Name) and alias.id in spark_aliases):
-                    return node
-                target=ast.Attribute(value=ast.Name(id=alias.id,ctx=ast.Load()),attr='format_string',ctx=ast.Load())
-            elif isinstance(formatter,ast.Name) and formatter.id in named_aliases:
-                used_direct[formatter.id]=used_direct.get(formatter.id,0)+1
-                target=ast.Name(id=named_aliases[formatter.id],ctx=ast.Load())
-            else:
-                return node
-            new=ast.Call(func=target,args=[ast.Constant(value=f'%.{precision}f'),expr.args[0]],keywords=[])
-            node.args[1]=ast.copy_location(new,expr)
-            replacements.append({'column':field,'precision':precision,'reason':'PowerShell source-defined ungrouped fixed-point output'})
-            return node
-    spark_aliases=set()
-    named_aliases={}
+    tree = ast.parse(code)
+    direct = set()
     for node in tree.body:
-        if isinstance(node,ast.ImportFrom) and node.module=='pyspark.sql':
-            spark_aliases.update(x.asname or x.name for x in node.names if x.name=='functions')
-        if isinstance(node,ast.Import) and any(a.name=='pyspark.sql.functions' for a in node.names):
-            # Bare import pyspark.sql.functions is accessed through a chain,
-            # not a single alias; deliberately leave it unchanged.
-            spark_aliases.update(x.asname for x in node.names if x.name=='pyspark.sql.functions' and x.asname)
-        if isinstance(node,ast.ImportFrom) and node.module=='pyspark.sql.functions':
-            for alias in node.names:
-                if alias.name == 'format_number':
-                    # Reuse existing alias by changing its import target.
-                    named_aliases[alias.asname or alias.name]=alias.asname or 'format_string'
-    original_named_uses = {old:sum(1 for node in ast.walk(tree) if isinstance(node,ast.Name) and node.id==old and isinstance(node.ctx,ast.Load)) for old in named_aliases}
-    tree=Rewriter().visit(tree)
+        if isinstance(node, ast.ImportFrom) and node.module == 'pyspark.sql.functions':
+            direct.update(alias.asname or alias.name for alias in node.names if alias.name in ('format_number','format_string'))
+    replacements = []
+    class Rewriter(ast.NodeTransformer):
+        def visit_Call(self, node):
+            self.generic_visit(node)
+            if not (isinstance(node.func, ast.Attribute) and node.func.attr == 'withColumn'
+                    and len(node.args) >= 2 and isinstance(node.args[0], ast.Constant)
+                    and isinstance(node.args[0].value, str)):
+                return node
+            field = node.args[0].value
+            precision = contracts.get(field.casefold())
+            if precision is None or precision > 18:
+                return node
+            expr = node.args[1]
+            if not (isinstance(expr, ast.Call) and len(expr.args) == 2 and not expr.keywords):
+                return node
+            fn = expr.func
+            if not ((isinstance(fn, ast.Attribute) and fn.attr in ('format_number','format_string'))
+                    or (isinstance(fn, ast.Name) and fn.id in direct)):
+                return node
+            if (isinstance(fn, ast.Attribute) and fn.attr == 'format_number') or (isinstance(fn, ast.Name) and fn.id in direct and _direct_kinds.get(fn.id) == 'format_number'):
+                if not (isinstance(expr.args[1], ast.Constant) and type(expr.args[1].value) is int and expr.args[1].value == precision):
+                    return node
+                value = expr.args[0]
+            else:
+                if not (isinstance(expr.args[0], ast.Constant) and expr.args[0].value == f'%.{precision}f'):
+                    return node
+                value = expr.args[1]
+            # DECIMAL(38,n) is the widest available Spark decimal. It retains
+            # fixed-width output and avoids a lossy cast to double. The local
+            # parity gate checks values and formatting against SSIS evidence.
+            numeric = ast.Call(func=ast.Attribute(value=value, attr='cast', ctx=ast.Load()),
+                               args=[ast.Constant(value=f'decimal(38,{precision})')], keywords=[])
+            output = ast.Call(func=ast.Attribute(value=numeric, attr='cast', ctx=ast.Load()),
+                              args=[ast.Constant(value='string')], keywords=[])
+            node.args[1] = ast.copy_location(output, expr)
+            replacements.append({'column':field,'precision':precision,
+                                 'reason':'PowerShell source-defined ungrouped fixed-point output'})
+            return node
+    _direct_kinds = {}
+    for node in tree.body:
+        if isinstance(node, ast.ImportFrom) and node.module == 'pyspark.sql.functions':
+            _direct_kinds.update({alias.asname or alias.name:alias.name for alias in node.names
+                                  if alias.name in ('format_number','format_string')})
+    tree = Rewriter().visit(tree)
     if not replacements:
         return code, []
-    # For direct names, replace only if no non-converted call of this alias
-    # remains. If another use exists, don't attempt an unsafe import rewrite.
-    for old, new in named_aliases.items():
-        if used_direct.get(old,0) != original_named_uses[old]:
-            return code, []
-        for node in tree.body:
-            if isinstance(node,ast.ImportFrom) and node.module=='pyspark.sql.functions':
-                for alias in node.names:
-                    if alias.name=='format_number' and (alias.asname or alias.name)==old:
-                        alias.name='format_string'
-                        # If previously import format_number as fmt, keep fmt
-                        alias.asname=old if old != 'format_number' else None
     return ast.unparse(ast.fix_missing_locations(tree)) + '\n', replacements
 
 # Spark decimal precision is capped at 38. Validate types that can be
@@ -660,6 +646,8 @@ def _safe_runtime_message(message):
 
 def _runtime_category(message):
     m = str(message or '').lower()
+    if any(x in m for x in ('illegalformatconversionexception', 'f != org.apache.spark.sql.types.decimal', 'f != decimal')):
+        return 'CODE_RUNTIME'
     if any(x in m for x in ('path_not_found', 'file not found', 'no such file or directory', 'unable to infer schema for csv', 'input path does not exist')):
         return 'MISSING_INPUT'
     if any(x in m for x in ('java_gateway', 'sparkcontext', 'spark-submit', 'spark submit', 'sparkfileutils.createtempdir', 'createtempdir', 'py4jjavaerror', 'winutils', 'java_home', 'pyspark is not installed', 'no module named', 'could not launch java')):
@@ -773,6 +761,7 @@ def _repair_request(original_prompt: str, candidate_code: str | None, feedback: 
             'source-supported widths, scale and rounding; never use double as a workaround. '
             'For source-defined fixed-point numeric text, do not use Spark '
             'format_number, which introduces thousands separators. '
+            'Java format_string("%.2f", DecimalColumn) throws IllegalFormatConversionException; use source-compatible decimal fixed-scale output without floating conversion or grouped formatting. '
             'Spark Column objects are expressions and are never callable: do not call '
             'F.col(...)(...), F.col(...).strip(), F.col(...).lower(), or '
             'other Python string methods on Column. Use pyspark.sql.functions '
@@ -861,7 +850,7 @@ class Workflow:
             last_failure = read_json(failure_file)
             if last_failure.get('codeSha256') != manifest.get('approvedCodeSha256'):
                 raise RemediationBlocked('Validation failure belongs to a different approved code hash')
-            if last_failure.get('category') not in ('DECIMAL_PRECISION','DATA_CONTRACT','CODE_RUNTIME','OUTPUT_MISSING'):
+            if last_failure.get('category') not in _RETRYABLE_RUNTIME or not last_failure.get('repairEligible', False):
                 raise RemediationBlocked('Only verified generated-code failures are eligible for AI correction')
             rejected_approved_code = old.decode('utf-8')
             repair_feedback = {'category':last_failure['category'],
@@ -1158,7 +1147,7 @@ class Workflow:
         # repair proposal; never silently mutate already approved source.
         failure_path=self.root/'local-validation-failure.json'
         if manifest['status']=='RUNTIME_VALIDATION_FAILED':
-            detail=' '.join(str(result.get(k,'')) for k in ('exceptionType','error','rootCause'))
+            detail=' '.join(str(result.get(k,'')) for k in ('exceptionType','error','rootCause','tracebackTail'))
             category=_runtime_category(detail)
             if category=='UNKNOWN' and 'DECIMAL_PRECISION_EXCEEDS_MAX_PRECISION' in detail:
                 category='DECIMAL_PRECISION'

@@ -37,8 +37,8 @@ def test_source_contract_requires_f2_and_local_fix_is_scoped():
     fixed,changes=normalize_source_fixed_point(CODE,SOURCE)
     assert changes == [{'column':'Bonus','precision':2,'reason':'PowerShell source-defined ungrouped fixed-point output'}]
     assert 'format_number(' not in fixed
-    assert 'format_string(' in fixed
-    assert "'%.2f'" in fixed
+    assert "cast('decimal(38,2)').cast('string')" in fixed
+    assert 'format_string(' not in fixed
     assert inspect_python(fixed)
 
 def test_end_to_end_propose_one_call_normalizes_numeric_with_safe_helper(tmp_path):
@@ -50,7 +50,7 @@ def test_end_to_end_propose_one_call_normalizes_numeric_with_safe_helper(tmp_pat
     assert r['status']=='AI_PATCH_REVIEW_ONLY'
     assert r['validationAttempts'][0]['localNormalization']['fixedPointColumns']==['Bonus']
     proposal=json.loads((tmp_path/'proposal.json').read_text())
-    assert 'format_string' in proposal['code'] and 'format_number(' not in proposal['code']
+    assert "cast('decimal(38,2)').cast('string')" in proposal['code'] and 'format_number(' not in proposal['code']
     assert proposal['codeSha256']==sha(proposal['code'].encode())
     assert not (tmp_path/'candidate.py').exists()
 
@@ -90,12 +90,12 @@ def test_direct_function_import_is_rewritten_consistently():
     code=CODE.replace('from pyspark.sql import functions as F', 'from pyspark.sql.functions import format_number as fmt')
     code=code.replace('F.format_number(', 'fmt(')
     fixed,changes=normalize_source_fixed_point(code,SOURCE)
-    assert changes and 'from pyspark.sql.functions import format_string as fmt' in fixed
-    assert 'fmt(' in fixed and inspect_python(fixed)
+    assert changes and "cast('decimal(38,2)').cast('string')" in fixed
+    assert 'fmt(' not in fixed and inspect_python(fixed)
 
 def test_direct_function_without_alias_is_rewritten_consistently():
     code=CODE.replace('from pyspark.sql import functions as F', 'from pyspark.sql.functions import format_number')
     code=code.replace('F.format_number(', 'format_number(')
     fixed,changes=normalize_source_fixed_point(code,SOURCE)
-    assert changes and 'from pyspark.sql.functions import format_string' in fixed
-    assert 'format_string(' in fixed and inspect_python(fixed)
+    assert changes and "cast('decimal(38,2)').cast('string')" in fixed
+    assert 'format_number(' not in fixed and inspect_python(fixed)
