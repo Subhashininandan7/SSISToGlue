@@ -1,0 +1,4 @@
+OrderID,CustomerID,CustomerName,Quantity,UnitPrice,Total
+O10,C01,Anika,2,125.50,251.00
+O11,C02,Bruno,3,50.00,150.00
+O13,C03,Chen,4,20.25,81.00

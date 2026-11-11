@@ -1,0 +1,12 @@
+Migration Forge v2.9.2 - local PySpark validation JSON channel fix
+
+- Fixes LOCAL_VALIDATION_FAILED: Extra data: line 2 column 1.
+- Spark stdout is no longer used as the structured validation response.
+- A unique per-package local-validation-result.json is written atomically by the Spark runner.
+- Validation rejects missing, corrupt or malformed result files, and nonzero subprocess exit codes.
+- Old result file is removed before each invocation to avoid stale success.
+- Single Generate AI button and original A/B routes retained.
+- Approval still required; output generated is not independent SSIS parity, and unsupported tasks remain barred from automatic cloud deployment.
+
+Offline tests: 202 passed, 4 subtests passed (313 pre-existing warnings); no live Spark, AWS or VS2022 invocation performed.
+Extract to a new folder; stop old web process, open SSISGlueDemo.sln, start DemoWeb and verify UI v2.9.2. Create a new session for testing or use the existing proposal/approval as supported by your session data.

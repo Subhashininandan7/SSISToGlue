@@ -1,0 +1,6 @@
+CustomerID,CustomerName,City,EffectiveFrom,EffectiveTo,IsCurrent
+C01,Anika,Chennai,2025-01-01,2026-11-08,0
+C01,Anika,Bengaluru,2026-11-08,9999-12-31,1
+C02,Bruno,Pune,2025-01-01,9999-12-31,1
+C03,Chen,Mumbai,2025-01-01,9999-12-31,1
+C04,Diya,Hyderabad,2026-11-08,9999-12-31,1

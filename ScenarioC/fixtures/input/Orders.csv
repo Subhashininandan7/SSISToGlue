@@ -1,0 +1,6 @@
+OrderID,CustomerID,Quantity,UnitPrice
+O10,C01,2,125.50
+O11,C02,3,50.00
+O13,C03,4,20.25
+O14,C77,2,30.00
+O12,C99,1,99.99

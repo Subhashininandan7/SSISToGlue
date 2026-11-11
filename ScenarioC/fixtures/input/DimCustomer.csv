@@ -1,0 +1,4 @@
+CustomerID,CustomerName,City,EffectiveFrom,EffectiveTo,IsCurrent
+C01,Anika,Chennai,2025-01-01,9999-12-31,1
+C02,Bruno,Pune,2025-01-01,9999-12-31,1
+C03,Chen,Mumbai,2025-01-01,9999-12-31,1

@@ -1,0 +1,478 @@
+-------------------------------------------------------------
+VARIABLES
+-------------------------------------------------------------
+PATHTOSCTS            : D:\SFW\10a6d095_d52d62\workflow.scts
+USERARGUMENTS         : -Djdk.xml.xpathExprOpLimit=256
+MESSAGELEVEL          : INFO
+MESSAGELEVEL          : Message level will be used: INFO
+PATHTOEMBEDDEDJAVA    : Embedded Java will be used: 
+PATHTOEMBEDDEDJAVA    : C:\Program Files\AWS Schema Conversion Tool\\runtime\bin\java.exe
+PATHTOSCT             : Default AWSSchemaConversionToolBatch will be used: 
+PATHTOSCT             : C:\Program Files\AWS Schema Conversion Tool\\app\AWSSchemaConversionToolBatch.jar
+-------------------------------------------------------------
+CHECK VARIABLES
+-------------------------------------------------------------
+PATHTOSCTS            : File D:\SFW\10a6d095_d52d62\workflow.scts exists
+PATHTOSCTS            : File D:\SFW\10a6d095_d52d62\workflow.scts will be used
+PATHTOEMBEDDEDJAVA    : Java path C:\Program Files\AWS Schema Conversion Tool\\runtime\bin\java.exe will be used
+PATHTOEMBEDDEDJAVA    : File C:\Program Files\AWS Schema Conversion Tool\\runtime\bin\java.exe is java binary
+PATHTOSCT             : File C:\Program Files\AWS Schema Conversion Tool\\app\AWSSchemaConversionToolBatch.jar exists
+PATHTOSCT             : File C:\Program Files\AWS Schema Conversion Tool\\app\AWSSchemaConversionToolBatch.jar will be used
+-------------------------------------------------------------
+START SCT Batch
+-------------------------------------------------------------
+2026-11-08 07:30:06.245 [   1]     GENERAL INFO    Attached GC listener to PS MarkSweep
+2026-11-08 07:30:06.245 [   1]     GENERAL INFO    Attached GC listener to PS Scavenge
+2026-11-08 07:30:11.663 [   1]     GENERAL INFO    user.timezone=Asia/Calcutta timezone.offset=+05:30
+2026-11-08 07:30:11.663 [   1]     GENERAL INFO    JVM Arguments:
+	-Djdk.xml.xpathExprOpLimit=256
+	-Xss128M
+	-Dfile.encoding=UTF-8
+	-Djdk.jar.maxSignatureFileSize=50000000
+	-XX:+UseParallelGC
+	--add-opens=java.base/jdk.internal.loader=ALL-UNNAMED
+	--add-exports=java.base/jdk.internal.loader=ALL-UNNAMED
+	--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+	--add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+	--add-opens=java.base/java.nio=ALL-UNNAMED
+	--add-opens=java.base/sun.security.x509=ALL-UNNAMED
+	--add-opens=java.base/sun.security.tools.keytool=ALL-UNNAMED
+	-agentpath:C:\Program Files\SentinelOne\Sentinel Agent 25.1.3.334\SentinelJava64.dll=extendedCapabilities
+2026-11-08 07:30:38.098 [   1]     GENERAL INFO    Build-Date: Y2025-M06-D16-H10
+2026-11-08 07:30:38.098 [   1]     GENERAL INFO    Build-Hash: 1.0.4460.0
+2026-11-08 07:30:38.172 [   1]     GENERAL INFO    AWS Schema Conversion Tool version 1.0 build 677
+2026-11-08 07:30:38.172 [   1]     GENERAL INFO    global_settings:
+    DEFAULT_PROFILE_GENERAL=AWS Glue
+    app_conversion.excluded_files=(?i).*\.(dll|rpm|a|bin|PIC|ico|z|bac|gif|tif|tiff|dpx|exr|bpg|jpg|jpeg|exe|zip|jar|apk|rar|png|class|pdf|wav|avi|mp3|bmp|iso|mid|midi|dat|tar|7z|gz|cab|djvu|djv|swf|deb|mpeg|mpg|zlib|dat|ddl|mov|mps|sfx|so|snd|sys|taz|tgz|zoo|ttf|fnt|fon|otf|afm|ttc|pfb|pfm|lib|war)$
+    app_folder=AWS Schema Conversion Tool
+    console_log_folder=C:\Users\subhashini.mr\AWS Schema Conversion Tool\Log
+    convert_without_statistic_reminder=false
+    data_migration_settings=
+    db2luw_driver_file=
+    debug_mode=false
+    do_not_remind_for_updates=false
+    emr_hive_driver_file=
+    ext_pack_version_alert=true
+    facade_log_folder=C:\Users\subhashini.mr\AWS Schema Conversion Tool\Log
+    file-system-thread-count=1
+    forget-state=false
+    greenplum_driver_file=
+    hive_driver_file=
+    install_dir=C:\Users\subhashini.mr
+    license_accepted_for_build=1.0.677
+    loader.failed.queries.attempts.count=3
+    loader.failed.queries.attempts.timeout.timemillis=10000
+    log.max_file_size_mb=100
+    log.max_files_count=20
+    log_folder=C:\Users\subhashini.mr\AWS Schema Conversion Tool\Log
+    log_folder_extractors=C:\Users\subhashini.mr\AWS Schema Conversion Tool\Extractor Log
+    log_folder_extractors_ask_before_load=false
+    log_folder_extractors_cassandra=C:\Users\subhashini.mr\AWS Schema Conversion Tool\Extractor Log\Cassandra
+    maria_driver_file=
+    message_level.CLONE_DATACENTER=INFO
+    message_level.COMPARE_SCHEMA=INFO
+    message_level.CONTROLLER=INFO
+    message_level.DMS_AGENT=DEFAULT
+    message_level.GENERAL=INFO
+    message_level.INTERPRETATOR=INFO
+    message_level.LOADER=INFO
+    message_level.MIGRATOR=INFO
+    message_level.PARSER=INFO
+    message_level.PRINTER=INFO
+    message_level.RESOLVER=INFO
+    message_level.TELEMETRY=INFO
+    message_level.TESTER=INFO
+    message_level.TRANSFORMER=INFO
+    message_level.TYPEMAPPING=INFO
+    message_level.UI=INFO
+    minimal-invalidation-percent=30
+    minimal-text-size=30
+    mssql_auth_file=
+    mssql_driver_file=
+    mysql_driver_file=
+    netezza_driver_file=
+    olap-version-2=false
+    open_file_after_action=true
+    oracle_driver_file=
+    parser-cache-size=0
+    parser.cleanup_mode=AFTER_PARSING
+    postgresql_driver_file=
+    project_folder=Projects
+    redshift_driver_file=
+    reporting.mode=FIVE
+    s3-duration=900
+    s3-max-try-count=5
+    s3-thread-count=2
+    s3-timeout=1000
+    security.certificate=
+    show-all-files=false
+    show_hide_schema_alert=true
+    showed-files-count=5
+    snowflake_driver_file=
+    source.jdbc.connections.max=20
+    source.jdbc.min.evictable.timemillis=30000
+    sql_cache.large_value_threshold=1024
+    sql_cache.mru_size=10
+    storage-type=s3
+    storage.default_project_path=D:\
+    store_password=false
+    store_username=true
+    sybase_ase_driver_file=
+    target.jdbc.connections.max=20
+    target.jdbc.min.evictable.timemillis=30000
+    teradata_driver_files=
+    teradata_first_driver_file=
+    teradata_second_driver_file=
+    throttling_time_for_progress_bar=1000
+    tree_settings_for_show={"sourceTreeSettingsModels":{"MYSQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["information_schema","performance_schema","mysql","sys"],"userDefinedSchemas":[],"systemSchemasOptions":["mysql","information_schema","performance_schema","sys"],"origin":null},"AZURE_SYNAPSE":{"hideEmpty":true,"hideEmptyDb":false,"systemSchemas":["%.INFORMATION_SCHEMA","%.sys","%.sysdiag"],"userDefinedSchemas":[],"systemSchemasOptions":["%.INFORMATION_SCHEMA","%.sys","%.sysdiag"],"origin":null},"DB2ZOS":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["SYS%"],"userDefinedSchemas":[],"systemSchemasOptions":["SYS%"],"origin":null},"MSSQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["%.INFORMATION_SCHEMA","%.sys"],"userDefinedSchemas":[],"systemSchemasOptions":["distribution","master","model","msdb","tempdb","ResourceDB","ReportServer","ReportServerTempDB","%.INFORMATION_SCHEMA","%.sys"],"origin":null},"ORACLE":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["ADAMS","ANONYMOUS","APEX_030000","APEX_030100","APEX_030200","APEX_040000","APEX_040100","APEX_040200","APEX_050000","APEX_050100","APEX_LISTENER","APEX_PUBLIC_USER","APEX_REST_PUBLIC_USER","APPQOSSYS","AUDSYS","AURORA$ORB$UNAUTHENTICATED","AWR_STAGE","BI","BLAKE","CLARK","CSMIG","CTXSYS","DBSFWUSER","DBSNMP","DEMO","DIP","DMSYS","DSSYS","DVF","DVSYS","EXFSYS","FLOWS_030000","FLOWS_FILES","GSMADMIN_INTERNAL","GSMCATUSER","GSMUSER","HR","IX","JONES","LBACSYS","MDDATA","MDSYS","MGMT_VIEW","OE","OJVMSYS","OLAPSYS","OPS$","ORACLE_OCM","ORDDATA","ORDPLUGINS","ORDSYS","ORDS_METADATA","ORDS_PUBLIC_USER","OUTLN","OWBSYS","OWBSYS_AUDIT","PERFSTAT","PM","QUEST","RDSADMIN","REMOTE_SCHEDULER_AGENT","SCOTT","SH","SI_INFORMTN_SCHEMA","SPATIAL_CSW_ADMIN_USR","SPATIAL_WFS_ADMIN_USR","SPOTLIGHT","SYS","SYSADM","SYSBACKUP","SYSDG","SYSKM","SYSMAN","SYSTEM","TRACESVR","TSMSYS","WKPROXY","WKSYS","WK_TEST","WMSYS","XDB","XS$NULL"],"origin":null},"GREENPLUM":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["gp_toolkit","information_schema","pg_aoseg","pg_bitmapindex","pg_catalog","pg_toast","pg_temp_%"],"origin":null},"AZURE_MSSQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["%.INFORMATION_SCHEMA","%.sys"],"userDefinedSchemas":[],"systemSchemasOptions":["INFORMATION_SCHEMA","sys"],"origin":null},"VERTICA":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["v_internal","v_catalog","v_monitor"],"origin":null},"SNOWFLAKE":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["SNOWFLAKE","%.ACCOUNT_USAGE","%.READER_ACCOUNT_USAGE","%.ORGANIZATION_USAGE","%.INFORMATION_SCHEMA"],"origin":null},"DB2LUW":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["ERRORSCHEMA","NULLID","SQLJ","SYSCAT","SYSFUN","SYSIBM","SYSIBMADM","SYSIBMINTERNAL","SYSIBMTS","SYSPROC","SYSPUBLIC","SYSSTAT","SYSTOOLS"],"origin":null},"TERADATA":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["DBC"],"origin":null},"SYBASE_ASE":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["%.INFORMATION_SCHEMA","%.webservices_role","%.sa_role","%.oper_role","%.keycustodian_role","%.sys","%.ha_role","%.js_admin_role","%.mon_role","%.navigator_role","%.public","%.sso_role","%.js_client_role","%.replication_role","%.js_user_role","%.messaging_role","%.sybase_ts_role","%.dtm_tm_role"],"userDefinedSchemas":[],"systemSchemasOptions":["master","model","sybsystemprocs","sybsystemdb","tempdb","sybsecurity","pubs2","pubs3","dbccdb","sybmgmtdb","%.sys","%.INFORMATION_SCHEMA","%.public","%.sa_role","%.sso_role","%.oper_role","%.sybase_ts_role","%.navigator_role","%.replication_role","%.dtm_tm_role","%.ha_role","%.mon_role","%.js_admin_role","%.messaging_role","%.js_client_role","%.js_user_role","%.webservices_role","%.keycustodian_role"],"origin":null},"NETEZZA":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["SYSTEM","%.DEFINITION_SCHEMA","%.INFORMATION_SCHEMA"],"origin":null},"POSTGRESQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["pg_toast%","information_schema","pg_catalog","pg_temp%"],"userDefinedSchemas":[],"systemSchemasOptions":["pg_catalog","information_schema","pg_temp%","pg_toast%"],"origin":null}},"targetTreeSettingsModels":{"MYSQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["information_schema","performance_schema","mysql","sys"],"userDefinedSchemas":[],"systemSchemasOptions":["mysql","information_schema","performance_schema","sys"],"origin":null},"AZURE_SYNAPSE":{"hideEmpty":true,"hideEmptyDb":false,"systemSchemas":["%.INFORMATION_SCHEMA","%.sys","%.sysdiag"],"userDefinedSchemas":[],"systemSchemasOptions":["%.INFORMATION_SCHEMA","%.sys","%.sysdiag"],"origin":null},"DB2ZOS":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["SYS%"],"userDefinedSchemas":[],"systemSchemasOptions":["SYS%"],"origin":null},"MSSQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["%.INFORMATION_SCHEMA","%.sys"],"userDefinedSchemas":[],"systemSchemasOptions":["distribution","master","model","msdb","tempdb","ResourceDB","ReportServer","ReportServerTempDB","%.INFORMATION_SCHEMA","%.sys"],"origin":null},"ORACLE":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["ADAMS","ANONYMOUS","APEX_030000","APEX_030100","APEX_030200","APEX_040000","APEX_040100","APEX_040200","APEX_050000","APEX_050100","APEX_LISTENER","APEX_PUBLIC_USER","APEX_REST_PUBLIC_USER","APPQOSSYS","AUDSYS","AURORA$ORB$UNAUTHENTICATED","AWR_STAGE","BI","BLAKE","CLARK","CSMIG","CTXSYS","DBSFWUSER","DBSNMP","DEMO","DIP","DMSYS","DSSYS","DVF","DVSYS","EXFSYS","FLOWS_030000","FLOWS_FILES","GSMADMIN_INTERNAL","GSMCATUSER","GSMUSER","HR","IX","JONES","LBACSYS","MDDATA","MDSYS","MGMT_VIEW","OE","OJVMSYS","OLAPSYS","OPS$","ORACLE_OCM","ORDDATA","ORDPLUGINS","ORDSYS","ORDS_METADATA","ORDS_PUBLIC_USER","OUTLN","OWBSYS","OWBSYS_AUDIT","PERFSTAT","PM","QUEST","RDSADMIN","REMOTE_SCHEDULER_AGENT","SCOTT","SH","SI_INFORMTN_SCHEMA","SPATIAL_CSW_ADMIN_USR","SPATIAL_WFS_ADMIN_USR","SPOTLIGHT","SYS","SYSADM","SYSBACKUP","SYSDG","SYSKM","SYSMAN","SYSTEM","TRACESVR","TSMSYS","WKPROXY","WKSYS","WK_TEST","WMSYS","XDB","XS$NULL"],"origin":null},"GREENPLUM":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["gp_toolkit","information_schema","pg_aoseg","pg_bitmapindex","pg_catalog","pg_toast","pg_temp_%"],"origin":null},"AZURE_MSSQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["%.INFORMATION_SCHEMA","%.sys"],"userDefinedSchemas":[],"systemSchemasOptions":["INFORMATION_SCHEMA","sys"],"origin":null},"VERTICA":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["v_internal","v_catalog","v_monitor"],"origin":null},"SNOWFLAKE":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["SNOWFLAKE","%.ACCOUNT_USAGE","%.READER_ACCOUNT_USAGE","%.ORGANIZATION_USAGE","%.INFORMATION_SCHEMA"],"origin":null},"DB2LUW":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["ERRORSCHEMA","NULLID","SQLJ","SYSCAT","SYSFUN","SYSIBM","SYSIBMADM","SYSIBMINTERNAL","SYSIBMTS","SYSPROC","SYSPUBLIC","SYSSTAT","SYSTOOLS"],"origin":null},"TERADATA":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["DBC"],"origin":null},"SYBASE_ASE":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["%.INFORMATION_SCHEMA","%.webservices_role","%.sa_role","%.oper_role","%.keycustodian_role","%.sys","%.ha_role","%.js_admin_role","%.mon_role","%.navigator_role","%.public","%.sso_role","%.js_client_role","%.replication_role","%.js_user_role","%.messaging_role","%.sybase_ts_role","%.dtm_tm_role"],"userDefinedSchemas":[],"systemSchemasOptions":["master","model","sybsystemprocs","sybsystemdb","tempdb","sybsecurity","pubs2","pubs3","dbccdb","sybmgmtdb","%.sys","%.INFORMATION_SCHEMA","%.public","%.sa_role","%.sso_role","%.oper_role","%.sybase_ts_role","%.navigator_role","%.replication_role","%.dtm_tm_role","%.ha_role","%.mon_role","%.js_admin_role","%.messaging_role","%.js_client_role","%.js_user_role","%.webservices_role","%.keycustodian_role"],"origin":null},"NETEZZA":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":[],"userDefinedSchemas":[],"systemSchemasOptions":["SYSTEM","%.DEFINITION_SCHEMA","%.INFORMATION_SCHEMA"],"origin":null},"POSTGRESQL":{"hideEmpty":true,"hideEmptyDb":true,"systemSchemas":["pg_toast%","information_schema","pg_catalog","pg_temp%"],"userDefinedSchemas":[],"systemSchemasOptions":["pg_catalog","information_schema","pg_temp%","pg_toast%"],"origin":null}}}
+    vertica_driver_file=
+    whatsnew_content_server_url=https://{0}.cloudfront.net/{1}/{2}/whatsNew.html
+    whatsnew_list_server_url=https://{0}.cloudfront.net/?versionNumber={1}&buildNumber={2}
+    wla_log=false
+
+2026-11-08 07:30:38.176 [   1]     GENERAL MANDATORY Windows 11 10.0 amd64 Java version: Corretto-17.0.15.6.1
+2026-11-08 07:30:38.178 [   1]     GENERAL MANDATORY Used memory: 600.15 MB, Free memory: 1.31 GB, Total memory: 1.89 GB, Maximum memory: 6.94 GB
+2026-11-08 07:30:38.180 [   1]     GENERAL MANDATORY Package name: <n/a>
+Library list: 
+    AWSSchemaConversionToolBatch.jar
+
+2026-11-08 07:30:39.917 [   1]     GENERAL INFO    CreateProject started...
+2026-11-08 07:30:39.952 [   1]     GENERAL INFO    [CreateProjectCommand] started.
+2026-11-08 07:30:41.489 [   1]      PARSER WARNING Parser is blocked: Cache size is 0.
+2026-11-08 07:30:41.548 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.549 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.551 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.709 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.709 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.709 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.724 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.724 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.724 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.732 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.734 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.734 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.740 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.741 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.741 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.747 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.747 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.747 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.749 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.749 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.749 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.756 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.756 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.756 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.759 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.759 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.759 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.770 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.770 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.770 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.772 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.772 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.772 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.774 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.774 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.774 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.774 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.774 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.774 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.778 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.778 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.778 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.782 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.782 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.782 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.788 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.788 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.788 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.794 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.794 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.794 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:41.804 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:41.804 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:41.806 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:42.148 [   1]     GENERAL INFO      Project name: Forge_10a6d095
+2026-11-08 07:30:42.150 [   1]     GENERAL INFO      Project directory: D:\SFW\10a6d095_d52d62\project\Forge_10a6d095
+2026-11-08 07:30:42.152 [   1]     GENERAL INFO    [CreateProjectCommand] finished.
+2026-11-08 07:30:42.152 [   1]     GENERAL INFO    CreateProject finished in 0:00:02.246 sec with memory consumption of 297.14 MB (294.53 MB .. 297.14 MB).
+2026-11-08 07:30:42.154 [   1]     GENERAL INFO    CreateProject statistics:
+    GENERAL: 0:00:02.235 sec
+2026-11-08 07:30:42.154 [   1]     GENERAL INFO    AddSource started...
+2026-11-08 07:30:43.242 [   1]     GENERAL INFO    Connecting to SSIS database started...
+2026-11-08 07:30:43.261 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:30:43.261 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:30:43.261 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:30:58.430 [   1]      LOADER INFO    DbLoader initialization: vendorType=SSIS; url='D:\SFW\10a6d095_d52d62\input:0/SSIS'; username=''; serverVersion='0.0.0.0'
+2026-11-08 07:30:58.430 [   1]     GENERAL INFO    Connecting to SSIS database finished in 0:00:15.195 sec with memory consumption of 786.78 MB (366.77 MB .. 1 GB).
+2026-11-08 07:30:58.430 [   1]     GENERAL INFO    Connecting to SSIS database statistics:
+    GENERAL: 0:00:15.196 sec
+2026-11-08 07:30:58.845 [   1]     GENERAL INFO    Server id validation started...
+2026-11-08 07:30:58.845 [   1]     GENERAL INFO    Server id validation finished.
+2026-11-08 07:30:58.845 [   1]     GENERAL INFO    Loading SSIS project started...
+2026-11-08 07:30:58.855 [   1]      LOADER INFO    Loading of the metadata {processMode=init, recursionDepth=1} started...
+2026-11-08 07:30:59.118 [   1]      LOADER INFO    Loading of the metadata {processMode=init, recursionDepth=1} finished in 0:00:00.266 sec with memory consumption of 1.07 GB (1.07 GB .. 1.07 GB).
+2026-11-08 07:30:59.118 [   1]      LOADER INFO    main: Executing 'loadMetaData(1426)' for node {<undefined>} COMPLETED in 0.273 sec.; startLoadingStates=<undefined>, finalLoadingStates=<undefined>) 
+2026-11-08 07:30:59.118 [   1]     GENERAL INFO    Loading SSIS project finished in 0:00:00.278 sec with memory consumption of 1.07 GB (1.07 GB .. 1.07 GB).
+2026-11-08 07:30:59.118 [   1]     GENERAL INFO    Loading SSIS project statistics:
+    LOADER: 0:00:00.267 sec
+    GENERAL: 0:00:00.011 sec
+2026-11-08 07:30:59.221 [   1]     GENERAL INFO    AddSource finished in 0:00:17.066 sec with memory consumption of 1.07 GB (297.14 MB .. 1.07 GB).
+2026-11-08 07:30:59.221 [   1]     GENERAL INFO    AddSource statistics:
+    LOADER: 0:00:00.267 sec
+    GENERAL: 0:00:16.801 sec
+2026-11-08 07:30:59.221 [   1]     GENERAL INFO    AddServerMapping started...
+2026-11-08 07:30:59.272 [   1]     GENERAL INFO    [TreePathResolver] ETL.SSIS_SOURCE
+2026-11-08 07:30:59.336 [   1]     GENERAL INFO    [TreePathResolver] ETL.<Glue (virtual)>
+2026-11-08 07:30:59.457 [   1]     GENERAL INFO    AddServerMapping finished in 0:00:00.232 sec with memory consumption of 1.07 GB (1.07 GB .. 1.07 GB).
+2026-11-08 07:30:59.457 [   1]     GENERAL INFO    AddServerMapping statistics:
+    GENERAL: 0:00:00.233 sec
+2026-11-08 07:30:59.457 [   1]     GENERAL INFO    CreateReport started...
+2026-11-08 07:30:59.463 [   1]     GENERAL INFO    [TreePathResolver] ETL.SSIS_SOURCE.Packages
+2026-11-08 07:30:59.738 [   1]     GENERAL INFO    [CreateReport] "SSIS_SOURCE" -  Number of objects for converting: 1
+2026-11-08 07:30:59.930 [   1]     GENERAL INFO    Conversion direction is SSIS_TO_GLUE
+2026-11-08 07:31:02.598 [   1]      LOADER INFO    main: Executing 'loadMetaData(1409)' for node {SSIS:Packages} COMPLETED in 2.444 sec.; startLoadingStates=[subcategories=none; objects=extended; parsing=-; transformed=-], finalLoadingStates=[subcategories=full; objects=extended; parsing=-; transformed=-]) 
+2026-11-08 07:31:02.916 [   1]     GENERAL INFO    SSIS_TO_GLUE.mapping.xml loaded.
+2026-11-08 07:31:03.107 [   1]    RESOLVER INFO    Other packages registration (for possible lazy loading)...
+2026-11-08 07:31:03.107 [   1]    RESOLVER INFO    Package Parameters registration...
+2026-11-08 07:31:03.107 [   1]    RESOLVER INFO    Connection managers registration...
+2026-11-08 07:31:03.110 [   1]    RESOLVER INFO    SsisPackageDeclaration: A_Employees_Active_Bonus metadata reading started---
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Bulk insert tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Execute process tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Expression tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category File system tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Message queue tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Execute package tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Execute T-SQL tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Execute sql tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Script tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Notify Operator Tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Send mail tasks...
+2026-11-08 07:31:03.114 [   1]    RESOLVER INFO    Non-container category Data Flow Tasks...
+2026-11-08 07:31:03.117 [   1]    RESOLVER INFO    Sequence Containers non-task category node
+2026-11-08 07:31:03.117 [   1]    RESOLVER INFO    For Loop Containers non-task category node
+2026-11-08 07:31:03.117 [   1]    RESOLVER INFO    Foreach Loop Containers non-task category node
+2026-11-08 07:31:03.117 [   1]    RESOLVER INFO    Execute process tasks non-task category node
+2026-11-08 07:31:03.127 [   1]    RESOLVER INFO    End of SsisPackageDeclaration: A_Employees_Active_Bonus metadata reading---
+2026-11-08 07:31:03.184 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object SsisTaskDeclaration: Filter Active and Add Bonus...
+2026-11-08 07:31:03.184 [   1]    RESOLVER WARNING Currently unsupported Data flow task category: Script components...
+2026-11-08 07:31:03.184 [   1]    RESOLVER WARNING Currently unsupported Data flow task category: Unsupported components...
+2026-11-08 07:31:03.207 [   1]    RESOLVER WARNING Currently unsupported Data flow task category: XML sources...
+2026-11-08 07:31:03.300 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:03.412 [   1]      PARSER INFO    Parsing finished in 0:00:00.112 sec with memory consumption of 1.15 GB (1.15 GB .. 1.15 GB).
+2026-11-08 07:31:03.477 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:03.542 [   1]      PARSER INFO    Parsing finished in 0:00:00.063 sec with memory consumption of 1.15 GB (1.15 GB .. 1.15 GB).
+2026-11-08 07:31:03.561 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus SQL started...
+2026-11-08 07:31:03.756 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:04.107 [   1]      PARSER INFO    Parsing finished in 0:00:00.349 sec with memory consumption of 589.47 MB (589.47 MB .. 589.47 MB).
+2026-11-08 07:31:04.118 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:04.129 [   1]      PARSER INFO    Parsing finished in 0:00:00.009 sec with memory consumption of 589.47 MB (589.47 MB .. 589.47 MB).
+2026-11-08 07:31:04.133 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:04.160 [   1]      PARSER INFO    Parsing finished in 0:00:00.027 sec with memory consumption of 589.47 MB (589.47 MB .. 589.47 MB).
+2026-11-08 07:31:04.164 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus started...
+2026-11-08 07:31:04.276 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object FlatFileSourceDeclaration: Employees CSV...
+2026-11-08 07:31:04.278 [   1]    RESOLVER ERROR   Connection Employees Input has no dts-id, parent object FlatFileSourceDeclaration: Employees CSV
+2026-11-08 07:31:04.280 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'i4' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.282 [   1]    RESOLVER ERROR   'i4' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.282 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'str' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.282 [   1]    RESOLVER ERROR   'str' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.284 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'r8' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.284 [   1]    RESOLVER ERROR   'r8' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.286 [   1]    RESOLVER ERROR   Declaration for identifier 'Flat File Source Output' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.286 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeID' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.286 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeName' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.286 [   1]    RESOLVER ERROR   Declaration for identifier 'Department' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.288 [   1]    RESOLVER ERROR   Declaration for identifier 'Salary' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.288 [   1]    RESOLVER ERROR   Declaration for identifier 'Status' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:04.290 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object ConditionalSplitTransformationDeclaration: Active Filter...
+2026-11-08 07:31:04.293 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object InputDeclaration: Conditional Split Input...
+2026-11-08 07:31:04.293 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'str' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Active Filter.Conditional Split Input
+2026-11-08 07:31:04.293 [   1]    RESOLVER ERROR   'str' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Active Filter.Conditional Split Input
+2026-11-08 07:31:04.300 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object OutputDeclaration: Conditional Split Error Output...
+2026-11-08 07:31:04.305 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'i4' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Active Filter.Conditional Split Error Output
+2026-11-08 07:31:04.305 [   1]    RESOLVER ERROR   'i4' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Active Filter.Conditional Split Error Output
+2026-11-08 07:31:04.309 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object DerivedColumnTransformationDeclaration: Calculate 10 Percent Bonus...
+2026-11-08 07:31:04.315 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object InputDeclaration: Derived Column Input...
+2026-11-08 07:31:04.317 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'r8' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Calculate 10 Percent Bonus.Derived Column Input
+2026-11-08 07:31:04.317 [   1]    RESOLVER ERROR   'r8' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Calculate 10 Percent Bonus.Derived Column Input
+2026-11-08 07:31:04.319 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object OutputDeclaration: Derived Column Error Output...
+2026-11-08 07:31:04.319 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'i4' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Calculate 10 Percent Bonus.Derived Column Error Output
+2026-11-08 07:31:04.319 [   1]    RESOLVER ERROR   'i4' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Calculate 10 Percent Bonus.Derived Column Error Output
+2026-11-08 07:31:04.321 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object OutputDeclaration: Derived Column Output...
+2026-11-08 07:31:04.321 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'numeric' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Calculate 10 Percent Bonus.Derived Column Output
+2026-11-08 07:31:04.321 [   1]    RESOLVER ERROR   'numeric' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Calculate 10 Percent Bonus.Derived Column Output
+2026-11-08 07:31:04.334 [   1]    RESOLVER INFO    Default scope created for SSIS metadata object FlatFileDestinationDeclaration: ActiveEmployees CSV...
+2026-11-08 07:31:04.336 [   1]    RESOLVER ERROR   Connection ActiveEmployees Output has no dts-id, parent object FlatFileDestinationDeclaration: ActiveEmployees CSV
+2026-11-08 07:31:04.336 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'i4' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.336 [   1]    RESOLVER ERROR   'i4' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.340 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'str' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.340 [   1]    RESOLVER ERROR   'str' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.343 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'r8' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.343 [   1]    RESOLVER ERROR   'r8' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.343 [   1]    RESOLVER ERROR   Declaration corresponding to predicate com.amazon.sct.base.resolver.MetadataReader$$Lambda$1389/0x0000000800891cd0@c6a1be2 for identifier 'numeric' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.343 [   1]    RESOLVER ERROR   'numeric' datatype not found in scope DeclarationScope: {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.345 [   1]    RESOLVER WARNING Currently unsupported category External columns
+2026-11-08 07:31:04.345 [   1]    RESOLVER ERROR   Declaration for identifier 'Flat File Destination Input' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.345 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeID' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.345 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeName' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.345 [   1]    RESOLVER ERROR   Declaration for identifier 'Department' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.345 [   1]    RESOLVER ERROR   Declaration for identifier 'Salary' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.345 [   1]    RESOLVER ERROR   Declaration for identifier 'Bonus' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:04.351 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus finished in 0:00:00.186 sec with memory consumption of 589.47 MB (589.47 MB .. 589.47 MB).
+2026-11-08 07:31:04.629 [   1]      LOADER INFO    main: Executing 'loadMetaData(1388)' for node {SSIS:Connection managers.Package connection managers.Employees Input${136E70A2-11D5-44B6-982F-476752D8D2C5}} COMPLETED in 0.015 sec.; startLoadingStates=[subcategories=none; object=extended; parsing=-; transformed=-], finalLoadingStates=[subcategories=full; object=extended; parsing=-; transformed=-]) 
+2026-11-08 07:31:04.660 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:04.722 [   1]      PARSER INFO    Parsing finished in 0:00:00.060 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:04.735 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:04.769 [   1]      PARSER INFO    Parsing finished in 0:00:00.037 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:04.778 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:04.820 [   1]      PARSER INFO    Parsing finished in 0:00:00.044 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:05.282 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:05.449 [   1]      PARSER INFO    Parsing finished in 0:00:00.170 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:05.876 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:05.887 [   1]     PRINTER INFO    Printing finished in 0:00:00.009 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:05.887 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:05.932 [   1]      PARSER INFO    Parsing finished in 0:00:00.043 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:05.934 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:05.938 [   1]     PRINTER INFO    Printing finished in 0:00:00.003 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:05.992 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:06.008 [   1]      PARSER INFO    Parsing finished in 0:00:00.015 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.009 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:06.011 [   1]     PRINTER INFO    Printing finished in 0:00:00.002 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.049 [   1]      LOADER INFO    main: Executing 'loadMetaData(1388)' for node {SSIS:Connection managers.Package connection managers.ActiveEmployees Output${98F4DF4D-0BD3-4F41-B700-57D9146F7A39}} COMPLETED in 0.020 sec.; startLoadingStates=[subcategories=none; object=extended; parsing=-; transformed=-], finalLoadingStates=[subcategories=full; object=extended; parsing=-; transformed=-]) 
+2026-11-08 07:31:06.055 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:06.124 [   1]      PARSER INFO    Parsing finished in 0:00:00.067 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.222 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:06.240 [   1]     PRINTER INFO    Printing finished in 0:00:00.025 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.240 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus SQL finished in 0:00:02.690 sec with memory consumption of 617.89 MB (589.47 MB .. 617.89 MB).
+2026-11-08 07:31:06.240 [   1]     GENERAL INFO    Conversion Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus SQL statistics:
+    PARSER: 0:00:00.834 sec
+    PRINTER: 0:00:00.044 sec
+    RESOLVER: 0:00:00.186 sec
+    TRANSFORMER: 0:00:01.625 sec
+2026-11-08 07:31:06.253 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL started...
+2026-11-08 07:31:06.255 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus started...
+2026-11-08 07:31:06.258 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus finished in 0:00:00.001 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.261 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:06.295 [   1]      PARSER INFO    Parsing finished in 0:00:00.031 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.303 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:06.312 [   1]     PRINTER INFO    Printing finished in 0:00:00.010 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.316 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL finished in 0:00:00.061 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.316 [   1]     GENERAL INFO    Conversion Packages.A_Employees_Active_Bonus SQL statistics:
+    PARSER: 0:00:00.031 sec
+    PRINTER: 0:00:00.011 sec
+    RESOLVER: 0:00:00.001 sec
+    TRANSFORMER: 0:00:00.016 sec
+2026-11-08 07:31:06.316 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL started...
+2026-11-08 07:31:06.316 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:06.335 [   1]      PARSER INFO    Parsing finished in 0:00:00.020 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.347 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:06.353 [   1]     PRINTER INFO    Printing finished in 0:00:00.002 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.353 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL finished in 0:00:00.036 sec with memory consumption of 617.89 MB (617.89 MB .. 617.89 MB).
+2026-11-08 07:31:06.353 [   1]     GENERAL INFO    Conversion Packages.A_Employees_Active_Bonus SQL statistics:
+    PARSER: 0:00:00.020 sec
+    PRINTER: 0:00:00.003 sec
+    TRANSFORMER: 0:00:00.012 sec
+2026-11-08 07:31:11.334 [   1]     GENERAL INFO    CreateReport finished in 0:00:11.873 sec with memory consumption of 1.17 GB (617.89 MB .. 1.17 GB).
+2026-11-08 07:31:11.334 [   1]     GENERAL INFO    CreateReport statistics:
+    PARSER: 0:00:01.063 sec
+    PRINTER: 0:00:00.059 sec
+    RESOLVER: 0:00:00.188 sec
+    GENERAL: 0:00:08.906 sec
+    TRANSFORMER: 0:00:01.655 sec
+2026-11-08 07:31:11.334 [   1]     GENERAL INFO    SaveReportPDF started...
+2026-11-08 07:31:11.500 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:31:11.500 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:31:11.500 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:31:13.014 [   1]     GENERAL INFO    SaveReportPDF finished in 0:00:01.677 sec with memory consumption of 1005.55 MB (804.53 MB .. 1005.55 MB).
+2026-11-08 07:31:13.014 [   1]     GENERAL INFO    SaveReportPDF statistics:
+    GENERAL: 0:00:01.678 sec
+2026-11-08 07:31:13.014 [   1]     GENERAL INFO    SaveReportCSV started...
+2026-11-08 07:31:13.030 [   1]      LOADER INFO    Max JDBC Connections changed to 20
+2026-11-08 07:31:13.033 [   1]      LOADER INFO    Max Connection Threads changed to 20
+2026-11-08 07:31:13.033 [   1]      LOADER INFO    minEvictableTimeMillis changed to 30000
+2026-11-08 07:31:13.050 [   1]    DEBUGGER INFO    folder with source server name is not created
+2026-11-08 07:31:13.050 [   1]    DEBUGGER INFO    folder with target server name is not created
+2026-11-08 07:31:13.115 [   1]     GENERAL INFO    file.getParentFile().mkdirs() in CsvFileModel returned false
+2026-11-08 07:31:13.115 [   1]     GENERAL INFO    file.getParentFile().mkdirs() in CsvFileModel returned false
+2026-11-08 07:31:13.123 [   1]     GENERAL INFO    file.getParentFile().mkdirs() in CsvFileModel returned false
+2026-11-08 07:31:13.129 [   1]     GENERAL INFO    SaveReportCSV finished in 0:00:00.114 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.129 [   1]     GENERAL INFO    SaveReportCSV statistics:
+    GENERAL: 0:00:00.114 sec
+2026-11-08 07:31:13.129 [   1]     GENERAL INFO    Convert started...
+2026-11-08 07:31:13.129 [   1]     GENERAL INFO    [TreePathResolver] ETL.SSIS_SOURCE.Packages
+2026-11-08 07:31:13.131 [   1]     GENERAL INFO    [Convert] "SSIS_SOURCE" -  Number of objects for converting: 1
+2026-11-08 07:31:13.133 [   1]     GENERAL INFO    Conversion direction is SSIS_TO_GLUE
+2026-11-08 07:31:13.279 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:13.290 [   1]      PARSER INFO    Parsing finished in 0:00:00.010 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.309 [   1]      PARSER INFO    Parsing started...
+2026-11-08 07:31:13.327 [   1]      PARSER INFO    Parsing finished in 0:00:00.021 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.346 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus SQL started...
+2026-11-08 07:31:13.348 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus started...
+2026-11-08 07:31:13.435 [   1]    RESOLVER ERROR   Declaration for identifier 'Flat File Source Output' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:13.435 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeID' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:13.440 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeName' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:13.440 [   1]    RESOLVER ERROR   Declaration for identifier 'Department' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:13.440 [   1]    RESOLVER ERROR   Declaration for identifier 'Salary' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:13.440 [   1]    RESOLVER ERROR   Declaration for identifier 'Status' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.Employees CSV
+2026-11-08 07:31:13.445 [   1]    RESOLVER ERROR   Declaration for identifier 'Flat File Destination Input' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:13.445 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeID' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:13.445 [   1]    RESOLVER ERROR   Declaration for identifier 'EmployeeName' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:13.445 [   1]    RESOLVER ERROR   Declaration for identifier 'Department' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:13.445 [   1]    RESOLVER ERROR   Declaration for identifier 'Salary' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:13.445 [   1]    RESOLVER ERROR   Declaration for identifier 'Bonus' not found in scope {Siss}.A_Employees_Active_Bonus.Filter Active and Add Bonus.ActiveEmployees CSV
+2026-11-08 07:31:13.445 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus finished in 0:00:00.097 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.455 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:13.455 [   1]     PRINTER INFO    Printing finished in 0:00:00.001 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.457 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:13.457 [   1]     PRINTER INFO    Printing finished in 0:00:00.001 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.465 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:13.467 [   1]     PRINTER INFO    Printing finished in 0:00:00.001 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.472 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:13.486 [   1]     PRINTER INFO    Printing finished in 0:00:00.012 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.492 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus SQL finished in 0:00:00.146 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.492 [   1]     GENERAL INFO    Conversion Packages.A_Employees_Active_Bonus.Package tasks.Data Flow Tasks.Filter Active and Add Bonus SQL statistics:
+    PRINTER: 0:00:00.018 sec
+    RESOLVER: 0:00:00.098 sec
+    TRANSFORMER: 0:00:00.030 sec
+2026-11-08 07:31:13.492 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL started...
+2026-11-08 07:31:13.494 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus started...
+2026-11-08 07:31:13.498 [   1]    RESOLVER INFO    Resolving Packages.A_Employees_Active_Bonus finished in 0:00:00.003 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.502 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:13.511 [   1]     PRINTER INFO    Printing finished in 0:00:00.007 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.511 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL finished in 0:00:00.018 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.511 [   1]     GENERAL INFO    Conversion Packages.A_Employees_Active_Bonus SQL statistics:
+    PRINTER: 0:00:00.007 sec
+    RESOLVER: 0:00:00.004 sec
+    TRANSFORMER: 0:00:00.006 sec
+2026-11-08 07:31:13.511 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL started...
+2026-11-08 07:31:13.514 [   1]     PRINTER INFO    Printing started...
+2026-11-08 07:31:13.516 [   1]     PRINTER INFO    Printing finished in 0:00:00.001 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.516 [   1] TRANSFORMER INFO    Conversion Packages.A_Employees_Active_Bonus SQL finished in 0:00:00.005 sec with memory consumption of 1005.55 MB (1005.55 MB .. 1005.55 MB).
+2026-11-08 07:31:13.516 [   1]     GENERAL INFO    Conversion Packages.A_Employees_Active_Bonus SQL statistics:
+    PRINTER: 0:00:00.001 sec
+    TRANSFORMER: 0:00:00.003 sec
+2026-11-08 07:31:14.903 [   1]     GENERAL INFO    Convert finished in 0:00:01.774 sec with memory consumption of 1 GB (1005.55 MB .. 1 GB).
+2026-11-08 07:31:14.903 [   1]     GENERAL INFO    Convert statistics:
+    PARSER: 0:00:00.033 sec
+    PRINTER: 0:00:00.027 sec
+    RESOLVER: 0:00:00.102 sec
+    GENERAL: 0:00:01.570 sec
+    TRANSFORMER: 0:00:00.041 sec
+2026-11-08 07:31:14.905 [   1]     GENERAL INFO    SaveToLocalFolder started...
+2026-11-08 07:31:14.910 [   1]     GENERAL INFO    [TreePathResolver] ETL.<Glue (virtual)>.Package scripts
+2026-11-08 07:31:14.912 [   1]     GENERAL INFO    [SaveToLocalFolder]:  directory = D:\SFW\10a6d095_d52d62\output
+2026-11-08 07:31:16.175 [   1]      LOADER INFO    main: Executing 'getScripts(742)' for node {<undefined>} COMPLETED in 1.240 sec.; startLoadingStates=<undefined>, finalLoadingStates=<undefined>) 
+2026-11-08 07:31:16.178 [   1]     GENERAL INFO    SaveToLocalFolder finished in 0:00:01.272 sec with memory consumption of 1 GB (1 GB .. 1 GB).
+2026-11-08 07:31:16.178 [   1]     GENERAL INFO    SaveToLocalFolder statistics:
+    GENERAL: 0:00:01.273 sec
+2026-11-08 07:31:16.178 [   1]     GENERAL INFO    SaveProject started...
+2026-11-08 07:31:16.226 [   1]     GENERAL INFO    Saving project files started...
+2026-11-08 07:31:16.595 [   1]     GENERAL INFO    project_settings saved.
+2026-11-08 07:31:16.917 [   1]     GENERAL INFO    Saving project files finished in 0:00:00.691 sec with memory consumption of 1.19 GB (1 GB .. 1.19 GB).
+2026-11-08 07:31:16.917 [   1]     GENERAL INFO    Saving project files statistics:
+    GENERAL: 0:00:00.691 sec
+2026-11-08 07:31:16.917 [   1]     GENERAL INFO    SaveProject finished in 0:00:00.740 sec with memory consumption of 1.19 GB (1 GB .. 1.19 GB).
+2026-11-08 07:31:16.917 [   1]     GENERAL INFO    SaveProject statistics:
+    GENERAL: 0:00:00.740 sec
+2026-11-08 07:31:16.917 [   1]     GENERAL MANDATORY Log session finished.

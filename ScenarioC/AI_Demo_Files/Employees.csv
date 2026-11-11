@@ -1,0 +1,5 @@
+EmployeeID,EmployeeName,Department,Salary,Status
+101,Ravi,IT,50000,Active
+102,Priya,HR,60000,Active
+103,Anita,IT,70000,Inactive
+104,Meena,IT,65000,Active

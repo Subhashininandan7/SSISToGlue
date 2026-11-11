@@ -1,0 +1,3 @@
+Migration Forge v2.9.1 candidate: bounded Bedrock regeneration for top-level Python execution.
+Based on v2.9.0 supplied source. Existing Generate AI button and existing A/B implementation preserved.
+Run: ScenarioC/SSISGlueDemo.sln. See START_HERE_V291_AST_RETRY.md.
